@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+#calendar {
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+}
+/* テーブルの基本スタイル */
+#calendar table {
+    display: none;
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    color: #dfd9d9;
+    background-color: rgb(27, 26, 26);
+    box-shadow: 0px 0px 8px gray;
+    border-radius: 10px;
+}
+#calendar .active {
+    display: block;
+}
+h1 {
+    text-align: center;
+}
+tr td:first-of-type {
+    color: rgb(218, 27, 27);
+}
+tr td:last-of-type {
+    color: rgb(99, 138, 197);
+}
+td {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    text-align: center;
+}
+/* 最初の行かつ要素ないのコンテンツが空の場合のものは適用させない */
+tr:not(:nth-child(1)) td:not(:empty):hover {
+    background-color: gray;
+}
+/* 現在の日付にマークを付ける */
+.active_date {
+    background-color: hotpink;
+}
+/* 矢印の基本スタイル */
+.calendar-control {
+    display: block;
+    position: absolute;
+    height: 50px;
+    width: 30px;
+    background-color: #dad8d8;
+    color: #333;
+    line-height:45px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    opacity: .5;
+    /* 透明度をふわっと変える演出 */
+    transition: opacity .5s;
+}
+
+/* 左矢印 */
+.calendar-control-prev {
+    position: absolute;
+    left: 50px;
+    top: 128px;
+}
+/* 右矢印 */
+.calendar-control-next {
+    right: 50px;
+    top: 128px;
+}
+/* マウスが乗ったら濃くする */
+.calendar-control:hover {
+    opacity: .9;
+}
